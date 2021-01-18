@@ -28,7 +28,7 @@ class Curve:
         if x1 != x2:
             l = (y2 - y1) * invmod(x2 - x1, P)
         else:
-            l = 2 * self.a * x1 + self.b #curves of the form y = ax^2 + bx.. but this doesn't have the nice addition property.
+            l = 2 * self.a * x1 + self.b
 
         x = ((l - self.b) * invmod(self.a, P) - self.zero[0]) % P
         y = ((x - self.zero[0]) * l + self.zero[1]) % P
