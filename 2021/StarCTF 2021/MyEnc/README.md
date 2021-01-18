@@ -39,7 +39,7 @@ while True:
 	print "done:",ct
 ```
 
-The flag is converted to a keystream, and we are to figure said keystream by looking at the ciphertexts it produces. Connecting to the provided connection also required solving a proof of work.
+The flag is converted to a keystream, and we are to figure out said keystream by looking at the ciphertexts it produces. Connecting to the provided connection also required solving a proof of work.
 
 One of the first things I thought of on seeing this is that being able to send 0 as `m^q` will allow us to retrieve the iv, as 0 to any power is still 0. Additionally, by sending 1, we can retrieve the number of 1 bits in a block of the keystream, with each block being of length 7, from range(1,8). We can do this by simply subtracting the resulting ciphertext from sending `m^q` as 1 by the iv. The issue here is that in order to send 0 or 1, we need to know q, as `m^q` is m XOR q. So, we will be sending q and q XOR 1 for 0 and 1, respectively. The goal of the first part of this challenge is then to obtain q. It is also worth noting that my teammates and I also considered a few other potential approaches, like performing a side-channel attack, since `i**i**i` gets very large for even small numbers. We didn't end up following through with this.
 
