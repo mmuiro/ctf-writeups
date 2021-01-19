@@ -19,9 +19,8 @@ import os
 flag = 'fake flag'
 N=64
 key=randint(0,2**N)
-print key
+# print key
 key=bin(key)[2:].rjust(N,'0')
-# print(key)
 count=0
 while True:
 	p=0
