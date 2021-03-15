@@ -1,8 +1,3 @@
-----
-title: Prove No Knowledge
-date: Mar 14 2021
-author: qopruzjf
-----
 # UTCTF 2021 - Prove No Knowledge
 
 * **Category:** Crypto
